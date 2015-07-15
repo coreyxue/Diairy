@@ -1,0 +1,6 @@
+<p> NAME: <%= @habit.name %> </p>
+<p> DESCRIPTION: <%= @habit.description %></p>
+
+<%= link_to 'Edit', edit_habit_path(@habit) %>
+<%= link_to 'Delete', habit_path(@habit), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', habits_path %>

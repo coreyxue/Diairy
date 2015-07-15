@@ -1,0 +1,5 @@
+<h1>Habit List</h1> <%= link_to 'Create Your Habit', new_habit_path%>
+<% @habits.each do |habit| %>
+	<p>NAME:  <%=link_to habit.name, habit_path(habit) %></p>
+	<p>DESCRIPTION: <%= habit.description %></p>
+<% end %>

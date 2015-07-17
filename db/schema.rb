@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716053520) do
+ActiveRecord::Schema.define(version: 20150717062337) do
 
   create_table "goals", force: :cascade do |t|
     t.date     "start_date"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20150716053520) do
     t.integer  "habit_id",   limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "user_id",    limit: 4
   end
 
   add_index "goals", ["habit_id"], name: "index_goals_on_habit_id", using: :btree
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id", using: :btree
 
   create_table "habits", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -49,4 +51,5 @@ ActiveRecord::Schema.define(version: 20150716053520) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "goals", "habits"
+  add_foreign_key "goals", "users"
 end

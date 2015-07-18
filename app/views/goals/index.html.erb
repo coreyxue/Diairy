@@ -1,7 +1,7 @@
 <%= link_to 'Home', root_path %>
 <h1><%=@user.email%> Goals</h1>
 <% @goals.each do |goal| %>
-    <p>Id: <%= goal.id %></p>
+    <p>Habit: <%= goal.habit.name %></p>
     <p>Start: <%= goal.start_date %></p>
     <p>End: <%= goal.end_date %></p>
 <% end %>

@@ -5,6 +5,7 @@ class GoalsController < ApplicationController
 	end
 
 	def new
+		@habits = Habit.all
 	end
 
 	def create
@@ -16,6 +17,6 @@ class GoalsController < ApplicationController
 
 	private
 	def user_goal_params
-	    params.require(:goal).permit(:start_date, :end_date)
+	    params.require(:goal).permit(:habit_id, :start_date, :end_date)
 	end
 end

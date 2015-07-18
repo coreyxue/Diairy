@@ -3,9 +3,9 @@
 <%= link_to current_user.email, user_goals_path(current_user.id)%>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>
 <% else %>
-<%= link_to 'Sign In', new_user_session_path%> <%= link_to 'First Time User', new_user_registration_path%> </br>
+<%= link_to 'Sign In', new_user_session_path%> <%= link_to 'First Time User', new_user_registration_path%>
+<% end %> </br>
 <%= link_to 'Create Your Habit', new_habit_path%>
-<% end %>
 <% @habits.each do |habit| %>
 	<p>NAME:  <%=link_to habit.name, habit_path(habit) %></p>
 	<p>DESCRIPTION: <%= habit.description %></p>

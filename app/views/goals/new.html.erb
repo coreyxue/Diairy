@@ -1,0 +1,24 @@
+<h1>New Goal</h1>
+<%= form_for :goal, url: user_goals_path do |f| %>
+  <p>Habit: 
+  	<%= f.select(:habit_id) do %>
+	  	<% @habits.each do |habit| %>
+	  		<option value=<%=habit.id%>><%=habit.name%></option>
+	  	<% end %>
+  	<% end %>
+  </p>
+  <p>
+    <%= f.label :Start %><br>
+    <%= f.date_select :start_date %>
+  </p>
+ 
+  <p>
+    <%= f.label :End %><br>
+    <%= f.date_select :end_date %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', user_goals_path %>

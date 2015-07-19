@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   resources :habits
   resources :users do
     resources :goals
-  end 
+  end
+  resources :users do
+    resources :user_information, only: [:new, :create, :show, :edit, :update]
+  end
+
+  get '/users/:user_id/profile', to: 'user_information#show', as: 'profile'
+  get '/users/:user_id/profile_edit', to: 'user_information#edit', as: 'profile_edit'
+  patch '/user/:user_id/profile_update', to: 'user_information#update', as: 'profile_update'
 
   # You can have the root of your site routed with "root"
   root 'habits#index'

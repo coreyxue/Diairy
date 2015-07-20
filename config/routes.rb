@@ -5,10 +5,9 @@ Rails.application.routes.draw do
 
   resources :habits
   resources :users do
-    resources :goals
-  end
-  resources :users do
-    resources :user_information, only: [:new, :create, :show, :edit, :update]
+    resources :goals do
+      resources :check_ins
+    end
   end
 
   get '/users/:user_id/profile', to: 'user_information#show', as: 'profile'

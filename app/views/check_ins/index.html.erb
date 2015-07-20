@@ -1,0 +1,10 @@
+<h1>Progress</h1>
+<% if @check_ins.empty? %>
+	<p>No progress!</p>
+<% else %>
+	<% @check_ins.each do |check_in| %>
+		<p>Checked in on<%= check_in.datetime %></p>
+	<% end %>
+<% end %>
+<%= link_to 'Check In Today', user_goal_check_ins_path(@goal.user_id, @goal.id), method: :post %>
+<%= link_to 'Back', profile_path(@goal.user_id) %>

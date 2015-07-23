@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/profile', to: 'user_information#show', as: 'profile'
+
+  get '/users/:user_id/profile_new', to: 'user_information#new', as: 'profile_new'
   get '/users/:user_id/profile_edit', to: 'user_information#edit', as: 'profile_edit'
+  post '/users/:user_id/profile_create', to: 'user_information#create', as: 'profile_create'
   patch '/user/:user_id/profile_update', to: 'user_information#update', as: 'profile_update'
 
   # You can have the root of your site routed with "root"

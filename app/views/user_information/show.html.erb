@@ -3,7 +3,7 @@
 	<p>Description: <%= @user_infor.description %></p>
 	<%= link_to 'Update your information', profile_edit_path(@user)%>
 <% else %>
-	<%= link_to 'Enter your information', new_user_user_information_path(@user)%>
+	<%= link_to 'Enter your information', profile_new_path(@user)%>
 <% end %>
 
 <%= link_to 'My goals', user_goals_path(@user) %>

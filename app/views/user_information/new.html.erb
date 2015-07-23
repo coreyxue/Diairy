@@ -1,5 +1,5 @@
 <h1>Your Information</h1>
-<%= form_for :user_information, url: user_user_information_index_path(@user) do |f| %>
+<%= form_for :user_information, url: profile_create_path(@user) do |f| %>
 	<p>
     	<%= f.label :name %><br>
     	<%= f.text_field :name %>

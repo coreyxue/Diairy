@@ -1,4 +1,5 @@
 class CheckInsController < ApplicationController
+	before_action :authenticate_user!
 	def index
 		@goal = Goal.find(params[:goal_id])
 		@check_ins = @goal.check_ins

@@ -1,4 +1,5 @@
 class UserInformationController < ApplicationController
+	before_action :authenticate_user!
 	def show
 		@user = User.find(params[:user_id])
 		@user_infor = @user.user_information

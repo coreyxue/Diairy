@@ -1,6 +1,6 @@
 class HabitsController < ApplicationController
 	def index
-		@habits = Habit.all
+	    @habits = Habit.all
 	end
 
 	def new
@@ -24,7 +24,7 @@ class HabitsController < ApplicationController
 	def update
 		@habit = Habit.find(params[:id])
 		if @habit.update(habit_params)
-			redirect_to @habit
+		    redirect_to @habit
 		else
 			render 'edit'
 		end

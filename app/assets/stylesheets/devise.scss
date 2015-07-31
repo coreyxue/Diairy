@@ -1,0 +1,39 @@
+.new_user {
+	position:relative;
+	left:25%;
+	width:700px;
+	height:350px;
+	display:block;
+	background-color: rgb(233, 232, 232);
+}
+.field {
+	position:relative;
+	margin-left: auto;
+    margin-right: auto;
+	padding-left:25%;
+}
+.field label {
+	font-family:Arial;
+	font-size: 15px;
+}
+.field input{
+	width:300px;
+	height:30px;
+	font-size: 20px;
+}
+
+#user_remember_me {
+	width:20px;
+	height:20px;
+	margin-top:10px;
+}
+.actions input{
+	margin-left:30%;
+	width:200px;
+	font-size:20px;
+	padding:20px;
+}
+.wrapper{
+	padding-top:60px;
+	padding-left:30px;
+}
